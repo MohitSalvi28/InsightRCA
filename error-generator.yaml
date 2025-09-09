@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: error-generator
+  namespace: llm-rca
+  labels:
+    app: error-generator
+spec:
+  containers:
+  - name: error-generator
+    image: busybox
+    command: ["/bin/sh", "-c"]
+    args:
+      - |
+        while true; do
+          echo "ERROR: API Server Crash Due to Excessive CRD Writes"
+          echo "ERROR: Node NotReady due to DiskPressure"
+          echo "ERROR: Pod CrashLoopBackOff due to ImagePullBackOff"
+          sleep 10
+        done
+    # Logs go to stdout → saved by Kubernetes in /var/log/containers/*.log
+  restartPolicy: Always
