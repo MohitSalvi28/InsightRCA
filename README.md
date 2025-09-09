@@ -6,6 +6,7 @@ Make it executable:
 
 ```bash
 chmod +x deploy.sh
+```bash
 
 Run it:
 
