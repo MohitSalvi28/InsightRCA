@@ -1,12 +1,6 @@
-## How to use
+## information
 
-Save the above script as **deploy.sh**
+Set the API Key.
+(API_KEY in your environment variable)
 
-Make it executable:
-
-```bash
-chmod +x deploy.sh
-
-Run it:
-
-./deploy.sh
+Model files are same.
